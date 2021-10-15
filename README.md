@@ -3,6 +3,13 @@
 `dnswait` is a small script to wait for the "propagation" of a namserver configuration.
 
 
+## Installing
+
+It's as easy as:
+
+    python -m pip install dnswait
+
+
 ## There's no such thing as DNS propagation
 
 What make your browser don't hit your server right after you've
