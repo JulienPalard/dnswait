@@ -50,17 +50,16 @@ to serve `itsme` for your text entry, so you know exactly what those
 ## Another example
 
 Say you're the owner of `mdk.fr` (it's me) and your provider only
-allows you to change DNS records using issues on their `bug tracker`,
-then submit the issue asking them to set 51.15.187.166 as the IP for
-mdk.fr and run:
+allows you to change DNS records using issues on their bug tracker,
+then submit the issue asking them to set `51.15.187.166` as the IP for
+`mdk.fr` and run:
 
-    dnswait mdk.fr A 51.15.187.166
+    dnswait mdk.fr A 51.15.187.166 && notify-send "Hey they configured mdk.fr!"
 
-so you'll know when they do it.
+so you'll know when it's done.
 
-
-If they reply "it's done" while `dnswait` don't see it, they probably
-messed up something...
+(If they reply "it's done" while `dnswait` don't see it, they probably
+messed up...)
 
 
 ## Using in shell scripts
