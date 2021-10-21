@@ -20,13 +20,10 @@ def find_authority(qname):
     """Locate the autoritative name server for the given name using a stub
     resolver.
     """
-    try:
-        response = dns.resolver.resolve(qname, "NS")
-    except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
-        return find_authority(".".join(qname.split(".")[1:]))
+    zone = dns.resolver.zone_for_name(qname)
     return [
         (ns.target, a.address)
-        for ns in response
+        for ns in dns.resolver.resolve(zone, "NS")
         for a in dns.resolver.resolve(ns.target, "A")
     ]
 
